@@ -1,0 +1,20 @@
+<%- include("partials/header"); %>
+    <h1>Добро пожаловать <%= username %>!</h1>
+    <p>Ваша роль на сайте <%= role %>
+    </p>
+    <img width="300px" src="images/photo.avif" alt="">
+    <ul>
+        <% for (let user of users){ %>
+            <li>
+                <strong>
+                    <%= user.name %>,
+                </strong>
+                <%= user.designation %>
+
+                <% if (user.admin) { %>
+                    Администратор сайта
+               <% } %>
+            </li>
+            <% } %>
+    </ul>
+    <%- include("partials/footer") %>
